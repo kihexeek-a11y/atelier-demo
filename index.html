@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ателье — одежда на заказ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Ателье</a>
+    <nav>
+      <a href="#works">Работы</a>
+      <a href="#prices">Цены</a>
+      <a href="#order">Заказ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Одежда по вашим меркам</h1>
+      <p>Индивидуальный пошив: от идеи до готового изделия</p>
+      <a href="#order" class="btn">Оформить заказ</a>
+    </section>
+
+    <section id="works">
+      <h2>Наши работы</h2>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="dress">Платья</button>
+        <button class="filter-btn" data-filter="suit">Костюмы</button>
+        <button class="filter-btn" data-filter="coat">Верхняя одежда</button>
+      </div>
+
+      <div class="gallery">
+        <article class="card" data-category="dress">
+          <img src="img/work1.jpg" alt="Вечернее платье">
+          <h3>Вечернее платье</h3>
+          <p>от 8 000 ₽</p>
+        </article>
+        <article class="card" data-category="suit">
+          <img src="img/work2.jpg" alt="Классический костюм">
+          <h3>Классический костюм</h3>
+          <p>от 15 000 ₽</p>
+        </article>
+        <article class="card" data-category="coat">
+          <img src="img/work3.jpg" alt="Пальто">
+          <h3>Пальто</h3>
+          <p>от 20 000 ₽</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="prices">
+      <h2>Стоимость</h2>
+      <div class="calc">
+        <label>Изделие
+          <select id="item">
+            <option value="8000">Платье</option>
+            <option value="15000">Костюм</option>
+            <option value="20000">Пальто</option>
+            <option value="3000">Юбка</option>
+          </select>
+        </label>
+
+        <label>Ткань
+          <select id="fabric">
+            <option value="1">Хлопок</option>
+            <option value="1.3">Шерсть</option>
+            <option value="1.6">Шёлк</option>
+          </select>
+        </label>
+
+        <label>Срочность
+          <select id="rush">
+            <option value="1">Обычная (3 недели)</option>
+            <option value="1.25">Ускоренная (10 дней)</option>
+            <option value="1.5">Срочная (5 дней)</option>
+          </select>
+        </label>
+
+        <p class="total">Примерная стоимость: <strong id="total">8 000 ₽</strong></p>
+      </div>
+    </section>
+
+    <section id="order">
+      <h2>Заказать пошив</h2>
+      <form id="order-form" novalidate>
+        <label>Имя
+          <input type="text" name="name" required>
+        </label>
+        <label>Телефон или Telegram
+          <input type="text" name="contact" required>
+        </label>
+        <label>Что хотите сшить
+          <textarea name="description" rows="4" required></textarea>
+        </label>
+
+        <fieldset>
+          <legend>Мерки (см)</legend>
+          <label>Рост <input type="number" name="height" min="100" max="220"></label>
+          <label>Грудь <input type="number" name="chest" min="50" max="160"></label>
+          <label>Талия <input type="number" name="waist" min="40" max="150"></label>
+          <label>Бёдра <input type="number" name="hips" min="50" max="170"></label>
+        </fieldset>
+
+        <label>Фото-референс
+          <input type="file" name="photo" accept="image/*">
+        </label>
+
+        <button type="submit" class="btn">Отправить заявку</button>
+        <p id="form-message" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contacts">
+    <h2>Контакты</h2>
+    <p>Телефон: +374 97 14 53 00</p>
+    <p>Telegram: @gabrielyaann72</p>
+    <p>Адрес: г. Yerevan, ул. Goyutyan poxoc, 1</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
